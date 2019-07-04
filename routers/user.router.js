@@ -20,5 +20,9 @@ module.exports = (wagner) =>{
         userCtrl.DeleteById(req,res);
     });
 
+    router.put('/:id',(req,res)=>{
+        userCtrl.updateUsuario(req,res);
+    });
+
     return router;
 }

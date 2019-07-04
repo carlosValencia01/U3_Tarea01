@@ -77,13 +77,28 @@ const DeleteById = (req,res) =>{
         })
 }
 
+const updateUsuario = (req,res) =>{
+    const {id} = req.params;
+
+    _user.update({_id:id},{$set:req.body})
+        .then((data)=>{
+            res.status(status.OK);
+            res.json({msg:"Usuario actualizado", data:data});
+        })
+        .catch((err)=>{
+            res.status(status.NOT_FOUND);
+            res.json({msg:"Error",data:err});
+        });        
+}
+
 module.exports = (User)=>{
     _user = User;
     return({
         createUser,
         findAll,
         DeleteById,
-        findId
+        findId,
+        updateUsuario
     })
 }
 
