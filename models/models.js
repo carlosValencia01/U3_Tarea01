@@ -11,10 +11,12 @@ module.exports=(wagner) => {
 
     const User = require('./user.model');
     const Brand = require('./brand.model');
+    const Product = require('./product.model');
 
     const models={
         User,
-        Brand
+        Brand,
+        Product
     }
 
     _.each(models,(v,k) => {
