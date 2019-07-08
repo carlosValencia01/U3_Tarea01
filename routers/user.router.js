@@ -26,5 +26,9 @@ module.exports = (wagner) =>{
         userCtrl.updateUsuario(req,res);
     });
 
+    router.get('/login/:email/:password',(req,res)=>{
+        userCtrl.login(req,res);
+    });
+
     return router;
 }
